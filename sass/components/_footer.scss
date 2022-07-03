@@ -12,8 +12,10 @@
 }
 
 .footer-address {
-	text-align: center;
-	margin-bottom: 60px;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+		margin-bottom: 60px;
+	}
 }
 
 address {
@@ -24,7 +26,7 @@ address {
 }
 
 .footer-list {
-	min-width: 231px;
+	width: 231px;
 }
 
 .footer-list__item:not(:last-child) {
@@ -32,16 +34,28 @@ address {
 }
 
 .footer > .container {
-	// display: flex;
-	// align-items: baseline;
-	// justify-content: space-between;
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	// @media screen and (min-width: 768px) and (max-width: 1200px) {
+	// 	padding-left: 76px;
+	// 	padding-right: 89px;
+	// }
 }
 
 .footer-social {
-	text-align: center;
-	margin-bottom: 60px;
-	// margin-left: 70px;
-	// margin-right: 93px;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	@media screen and (min-width: 1200px) {
+		margin-left: 70px;
+		margin-right: 93px;
+	}
 }
 
 .footer-social__text {
@@ -54,9 +68,9 @@ address {
 }
 
 .footer-mailing {
-	text-align: center;
-	// margin-left: 70px;
-	// margin-right: 93px;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+	}
 }
 
 .footer-mailing__form {
@@ -64,19 +78,24 @@ address {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	// align-items: baseline;
+	@media screen and (min-width: 1200px) {
+		align-items: baseline;
+	}
 }
 
 .footer-mailing__form input {
-	width: 358px;
+	width: 450px;
 	height: 50px;
 	margin-bottom: 20px;
-	// margin-right: 12px;
 	padding: 15px 16px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 4px;
 	background-color: inherit;
 	color: var(--color-text-white);
+	@media screen and (min-width: 1200px) {
+		width: 358px;
+		margin-right: 12px;
+	}
 	&::placeholder {
 		font-size: 16px;
 		line-height: 1.25;
@@ -89,9 +108,8 @@ address {
 	font-size: 16px;
 	line-height: 1.88;
 	letter-spacing: 0.06em;
-	padding: 10px 29px 10px 28px;
+	padding: 10px 28px 10px 28px;
 	display: flex;
-	/* justify-content: center; */
 	align-items: center;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
