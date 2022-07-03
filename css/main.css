@@ -222,6 +222,18 @@ img {
     margin-right: 10px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .contacts__icon--envelope {
+    width: 16px;
+    height: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts__icon--smartphone {
+    width: 10px;
+    height: 16px;
+  }
+}
 
 .logo {
   color: var(--color-logo);
