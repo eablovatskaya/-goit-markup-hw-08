@@ -284,6 +284,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   background-color: #ffffff;
   width: 100vw;
   height: 100vh;
@@ -344,8 +345,28 @@ img {
   display: flex;
 }
 
+.mob-soc-item {
+  position: relative;
+}
+.mob-soc-item:hover, .mob-soc-item:focus {
+  color: var(--color-accent);
+}
 .mob-soc-item:not(:last-child) {
   margin-right: 20px;
+}
+.mob-soc-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  right: -10px;
+  background: rgba(33, 33, 33, 0.2);
+}
+
+.mob-soc-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2222222222;
 }
 
 .logo {
@@ -718,6 +739,7 @@ address {
 
 .footer-list {
   width: 231px;
+  margin: 0 auto;
 }
 
 .footer-list__item:not(:last-child) {
@@ -821,8 +843,8 @@ address {
 }
 
 .modal {
-  width: 528px;
-  min-height: 581px;
+  width: 450px;
+  min-height: 609px;
   background-color: var(--color-text-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -835,6 +857,12 @@ address {
 }
 .bacdrop.is-hidden .modal {
   transform: translate(0) scale(0);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    min-height: 581px;
+  }
 }
 
 .modal__close-btn {
@@ -868,10 +896,15 @@ address {
 .modal__title {
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   color: var(--color-text-title);
   margin-bottom: 12px;
+}
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    line-height: 1.15;
+  }
 }
 
 .modal__field {
@@ -906,10 +939,16 @@ address {
   border-color: var(--color-accent);
 }
 .modal__textarea::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
+  font-size: 14px;
+  line-height: 1.1428571429;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5019607843);
+}
+@media screen and (min-width: 1200px) {
+  .modal__textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+  }
 }
 
 .modal__label {
@@ -934,10 +973,16 @@ address {
 }
 
 .modal__check-label {
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.1666666667;
   display: flex;
   align-items: baseline;
+}
+@media screen and (min-width: 1200px) {
+  .modal__check-label {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal__checkbox {
@@ -948,10 +993,10 @@ address {
 }
 
 .modal__check-label span {
-  width: 16px;
-  height: 15px;
+  width: 15px;
+  height: 14px;
   border: 2px solid #000000;
-  margin-right: 8px;
+  margin-right: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -961,6 +1006,13 @@ address {
 .modal__check:checked + .modal__check-label span {
   background-color: var(--color-accent);
   border: none;
+}
+@media screen and (min-width: 1200px) {
+  .modal__check-label span {
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+  }
 }
 
 .modal__linc {

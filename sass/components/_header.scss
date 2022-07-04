@@ -143,7 +143,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	// z-index: 1;
+	z-index: 1;
 	background-color: #ffffff;
 	width: 100vw;
 	height: 100vh;
@@ -205,7 +205,26 @@
 }
 
 .mob-soc-item {
+	position: relative;
+	&:hover,
+	&:focus {
+		color: var(--color-accent);
+	}
 	&:not(:last-child) {
 		margin-right: 20px;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			right: -10px;
+			background: rgba(33, 33, 33, 0.2);
+		}
 	}
+}
+
+.mob-soc-link {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: calc(22 / 18);
 }
